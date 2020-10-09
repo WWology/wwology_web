@@ -1,3 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://wwology.tech/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "WWology - Your one stop solution to your every tech needs"
+publishdir = "../public"
