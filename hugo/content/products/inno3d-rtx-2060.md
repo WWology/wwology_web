@@ -1,0 +1,7 @@
+---
+title: "INNO3D RTX 2060"
+date: 2020-10-10T06:29:31+07:00
+draft: true
+---
+
+INNO3D RTX 2060 6GB GDDR6 192-Bit
