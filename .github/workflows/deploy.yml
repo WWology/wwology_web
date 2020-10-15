@@ -1,0 +1,32 @@
+name: Deploy to firebase hosting
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  FIREBASE_TOKEN: ${{secrets.FIREBASE_TOKEN}}
+  ALGOLIA_APP_ID: F10Z0SPNPJ
+  ALGOLIA_ADMIN_KEY: ${{secrets.ALGOLIA_ADMIN_KEY}}
+  ALGOLIA_INDEX_NAME: content
+  ALGOLIA_INDEX_FILE: public/algolia.json
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v2
+        - uses: actions/setup-node@v1
+          with:
+            node-version: 12
+        - name: Setup Hugo
+          uses: peaceiris/actions-hugo@v2
+          with:
+            hugo-version: '0.75.1'
+            extended: true
+        - run: npm ci
+        - run: npm ci
+          working-directory: ./components
+        - run: npm run build
+        - run: npm run deploy
